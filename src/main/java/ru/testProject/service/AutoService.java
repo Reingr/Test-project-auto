@@ -1,8 +1,17 @@
 package ru.testProject.service;
 
 import ru.testProject.dto.AutoDto;
-import ru.testProject.model.Auto;
+
+import java.util.List;
 
 public interface AutoService {
-    public AutoDto getAuto(Integer id);
+    AutoDto get(Integer id);
+
+    List<AutoDto> getAll();
+
+    void add(AutoDto autoDto);
+
+    void delete(Integer id);
+
+    AutoDto update(AutoDto newAutoDto);
 }
