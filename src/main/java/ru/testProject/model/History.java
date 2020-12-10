@@ -3,6 +3,7 @@ package ru.testProject.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -20,4 +21,8 @@ public class History {
     @ManyToOne
     @JoinColumn(name="point_id", referencedColumnName = "id")
     private Point point;
+    @ManyToOne
+    @JoinColumn(name="person_id", referencedColumnName = "id")
+    private Person person;
+    private LocalDateTime date;
 }
