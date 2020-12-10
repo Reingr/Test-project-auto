@@ -22,8 +22,7 @@ public class AutoServiceImpl implements AutoService {
 
     public AutoDto get(Integer id) {
         try {
-            Auto auto = autoRepository.getOne(id);
-            return new ModelMapper().map(auto, AutoDto.class);
+            return new ModelMapper().map(autoRepository.getOne(id), AutoDto.class);
         } catch (Exception e) {
             throw new BadRequestException("Автомобиль с id=" + id + " не найден");
         }
@@ -40,7 +39,11 @@ public class AutoServiceImpl implements AutoService {
     }
 
     public void delete(Integer id) {
-        autoRepository.deleteById(id);
+        try {
+            autoRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new BadRequestException("Автомобиль с id=" + id + " не найден");
+        }
     }
 
     public AutoDto update(AutoDto newAutoDto) {
