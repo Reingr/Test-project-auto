@@ -13,16 +13,17 @@ public class History {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JoinColumn(name="status_id", referencedColumnName = "id")
-    private HistoryStatus status;
-    @ManyToOne
     @JoinColumn(name="auto_id", referencedColumnName = "id")
     private Auto auto;
     @ManyToOne
-    @JoinColumn(name="point_id", referencedColumnName = "id")
-    private Point point;
+    @JoinColumn(name="point_rent_id", referencedColumnName = "id")
+    private Point pointRent;
+    @ManyToOne
+    @JoinColumn(name="point_return_id", referencedColumnName = "id")
+    private Point pointReturn;
     @ManyToOne
     @JoinColumn(name="person_id", referencedColumnName = "id")
     private Person person;
-    private LocalDateTime date;
+    private LocalDateTime dateRent;
+    private LocalDateTime dateReturn;
 }

@@ -17,6 +17,9 @@ public class Point {
     @OneToMany(mappedBy = "point", cascade = CascadeType.PERSIST)
     private List<AutoPosition> autoPositionList;
 
-    @OneToMany(mappedBy = "point", cascade = CascadeType.PERSIST)
-    private List<History> historyList;
+    @OneToMany(mappedBy = "pointRent", cascade = CascadeType.PERSIST)
+    private List<History> historyListRent;
+
+    @OneToMany(mappedBy = "pointReturn", cascade = CascadeType.PERSIST)
+    private List<History> historyListReturn;
 }
