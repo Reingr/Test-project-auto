@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.testProject.WebMessage;
+import ru.testProject.dto.WebMessage;
 import ru.testProject.dto.AutoDto;
 import ru.testProject.service.AutoService;
 
