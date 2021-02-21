@@ -11,8 +11,8 @@ public class AutoPosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne
-    @JoinColumn(name="auto_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "auto_id", referencedColumnName = "id")
     private Auto auto;
     @ManyToOne
     @JoinColumn(name="point_id", referencedColumnName = "id")

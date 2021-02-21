@@ -17,8 +17,8 @@ public class Auto {
     @JoinColumn(name="brand_id", referencedColumnName = "id")
     private Brand brand;
 
-    @OneToMany(mappedBy = "auto", cascade = CascadeType.PERSIST)
-    private List<AutoPosition> autoPositionList;
+    @OneToOne(mappedBy = "auto")
+    private AutoPosition autoPosition;
 
     @OneToMany(mappedBy = "auto", cascade = CascadeType.PERSIST)
     private List<History> historyList;
